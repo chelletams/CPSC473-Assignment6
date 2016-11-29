@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Online Trivia Game</title>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+  </head>
+
+  <body>
+    <div class="ui container" id="trivia-game">
+      <h1 class="ui dividing header">
+        Online Trivia Game Application
+      </h1>
+      <h2 class="ui header left aligned"><span></span></h2>
+
+      <div class="ui grid">
+        <div class="two wide column">
+          <div class="two wide middle aligned content column">
+            <div class="ui secondary vertical labeled icon menu" id="menu">
+              <a class="item" id="game-tab">
+                <i class="gamepad icon"></i>
+                  Play
+              </a>
+              <a class="item" id="question-tab">
+                <i class="write icon"></i>
+                  Create
+              </a>
+              <a class="item" id="score-tab">
+                <i class="star icon"></i>
+                  Score
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="ten wide column">
+          <h2 class="ui center aligned icon header" id="trivia-header">
+            <i class="puzzle icon"></i>
+            <div class="content">
+              Welcome to the Online Trivia Game Application!
+              <div class="sub header">
+                To start playing, first log-in to our application.
+              </div>
+            </div>
+          </h2>
+          <div class="ui tab item" id="game">
+            <div class="ui form">
+              <button class="ui button" id="getQuestionButton">
+                Get Question
+              </button>
+              <div class="field">
+                <h4>Question: </h4>
+                <div id="question-retrieved">
+                  <span data-bind="text: displayQuestion"></span>
+                </div>
+              </div>
+              <div class="ui field">
+                <input type="text" id="answer" placeholder="Enter your Answer">
+              </div>
+              <button class="ui teal button" id="getAnswerButton">
+                Submit
+              </button>
+              <div class="field">
+                <label>Answer: </label>
+                  <div id="getAnswer"></div>
+              </div>
+            </div>
+          </div>
+          <div class="ui tab item" id="question">
+            <div class="ui form">
+              <div class="field">
+                <input type="text" id="makeQuestion" placeholder="Enter a Question">
+              </div>
+              <div class="field">
+                <input type="text" id="createAnswer" placeholder="Enter an Answer">
+              </div>
+              <button class="ui teal button" id="submitQuestion">
+                Submit Question
+              </button>
+              <div class="field">
+                <div id="questionSaved"></div>
+              </div>
+            </div>
+          </div>
+          <div class="ui tab item" id="score">
+            <div class="ui form">
+              <div class="field">
+                <h4>Current Score</h4>
+                <div id="correctScore">
+                  Right: <span data-bind="correctPoints">0</span>
+                </div>
+                <div id="wrongScore">
+                  Wrong: <span data-bind="wrongPoints">0</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="four wide column" id="players">
+          <div id="trivia-login">
+            <h4>Login</h4>
+              <form class="ui form">
+                <div class="field">
+                  <div class="ui left icon input">
+                    <input id="username" type="text" placeholder="User" data-bind="value: username">
+                    <i class="user icon"></i>
+                  </div>
+                </div>
+                <div class="field">
+                  <div id="existing-user">
+                  </div>
+                </div>
+                <button  class="ui button" id="login">
+                  Join Game!
+                </button>
+              </form>
+          </div>
+          <h4>Online Users</h4>
+          <div class="ui list" id="users" data-bind="foreach: userList">
+            <div class="item" data-bind="text: $data"></div>
+          </div>
+        </div>
+      </div>  
+    </div>
+
+    <script src="knockout-3.4.1.js" type="text/javascript"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+    <script src="javascripts/app.js"></script>
+  </body>
+</html>

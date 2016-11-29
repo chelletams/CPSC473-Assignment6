@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  width: 855px;
+  margin: auto;
+  background: white;
+  font-size: 100%;
+  font-family: tahoma;
+}
+
+header, main, footer {
+  display: block;
+  min-width: 855px;
+}
+
+header .container, main .container, footer .container {
+  max-width: 855px;
+  margin: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: tahoma;
+}
+
+header {
+  padding: 25px 0 25px 0;
+  background: white;
+  overflow: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+main {
+    background: #fff;
+    border-radius: 0 5px 5px 5px;;
+    padding: 40px;
+}
+
+main .content {
+    padding: 30px 10px 30px 10px;
+    border-radius: 0 5px 5px 5px;
+    background: #eee;
+}
+
+main .content h3 {
+    border-radius: 5px;
+    color: #999;;
+    background: #ddd;
+    padding: 5px;
+    margin: 20px 0 10px 0;
+}
+
+main .content h3:first-child {
+    margin-top: 0;
+}
+
+main .content li {
+    border-radius: 5px;
+    padding: 3px;
+    background: #eff;
+    margin: 0 0 10px 0;
+}
+
+main .content span {
+  font-weight: bold;
+  padding: 0 3px 0 3px;
+  border-radius: 5px;
+  background: #ccc;
+  cursor: pointer;
+  margin-left: 5px;
+  font-size: 1.3em;
+}
+
+main .content p {
+    color: red;
+    margin: 30px 0 0px 0;
+}
+
+main .content p:first-child {
+    margin-top: 10px;
+}
+
+main .content input {
+    font-size: 1.5em;
+}
+
+footer {
+    border-top: 1px solid #fff;
+    padding: 40px 0 20px 0;
+}

@@ -1,0 +1,10 @@
+{
+	"name": "assignment4",
+	"description": "assignment using mongodb",
+	"version": "0.0.1",
+	"dependencies": {
+		"redis": "0.8.x",
+		"mongoose": "3.6.x",
+		"socket.io": "*"
+	}
+}
